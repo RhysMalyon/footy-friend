@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 2021_08_14_050626) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.integer "age"
     t.string "nationality"
     t.string "position"
