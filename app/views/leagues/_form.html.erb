@@ -1,0 +1,8 @@
+<div>
+  <h2>Add a league:</h2>
+  <%= simple_form_for(@league) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-primary mt-2' %>
+  <% end %>
+</div>
