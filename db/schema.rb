@@ -10,9 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_08_14_050626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "leagues", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "nationality"
+    t.string "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "squads", force: :cascade do |t|
+    t.bigint "player_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_squads_on_player_id"
+  end
+
+  create_table "stadia", force: :cascade do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.integer "built"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "crest_url"
+    t.integer "founded"
+    t.string "city"
+    t.bigint "league_id", null: false
+    t.bigint "squad_id", null: false
+    t.bigint "stadium_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["league_id"], name: "index_teams_on_league_id"
+    t.index ["squad_id"], name: "index_teams_on_squad_id"
+    t.index ["stadium_id"], name: "index_teams_on_stadium_id"
+  end
+
+  add_foreign_key "squads", "players"
+  add_foreign_key "teams", "leagues"
+  add_foreign_key "teams", "squads"
+  add_foreign_key "teams", "stadia"
 end
