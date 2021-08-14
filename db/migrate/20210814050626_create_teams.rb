@@ -6,7 +6,6 @@ class CreateTeams < ActiveRecord::Migration[6.1]
       t.integer :founded
       t.string :city
       t.references :league, null: false, foreign_key: true
-      t.references :squad, null: false, foreign_key: true
       t.references :stadium, null: false, foreign_key: true
 
       t.timestamps
