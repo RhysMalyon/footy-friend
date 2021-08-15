@@ -1,0 +1,14 @@
+<div>
+  <h2>Create your team:</h2>
+  <%= simple_form_for(@team) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :founded, :as => :integer,
+                :start_year => 1800,
+                :order => [:year] %>
+    <%= f.input :city %>
+    <%= f.association :league, input_html: { class: 'select2' } %>
+    <%= f.association :stadium, input_html: { class: 'select2' } %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-primary mt-2' %>
+  <% end %>
+</div>
