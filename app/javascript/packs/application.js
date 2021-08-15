@@ -27,4 +27,8 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  document.querySelectorAll(".card__inner").forEach(card => card.addEventListener("click",
+  () => {
+    card.classList.toggle('is-flipped');
+  }));
 });
