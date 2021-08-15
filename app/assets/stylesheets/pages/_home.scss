@@ -1,1 +1,32 @@
-// Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
+
+.hero {
+  height: 80vh;
+  background-color: #F5F411;
+}
+
+@media (max-width: 400px) {
+  .hero {
+    height: 100vh;
+    background-color: #F5F411;
+  }
+}
+
+.hero-logo {
+  font-size: 160px;
+}
+
+.hero-text {
+  padding: 64px;
+  width: 40vw;
+  color: black;
+  h1 {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+  }
+  p {
+    font-size: 24px;
+    font-family: 'Esteban', serif;
+  }
+}

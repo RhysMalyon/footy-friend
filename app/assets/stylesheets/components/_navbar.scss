@@ -1,8 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #F5F411;
-  box-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.3);
   z-index: 1000;
+  position: relative;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,4 +12,15 @@
 .navbar-lewagon .navbar-brand img {
   width: 60px;
   background-size: contain;
+}
+
+.top-return {
+  position: fixed;
+  font-size: 24px;
+  top: 48px;
+  right: 16px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }

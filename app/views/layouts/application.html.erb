@@ -11,7 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= favicon_link_tag 'favicon', type: 'image/png' %>
   </head>
-
+  <a name="top"></a>
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <%= link_to "/", class: "navbar-brand" do %>
@@ -45,6 +45,9 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="top-return">
+      <a href="#top"><i class="fas fa-angle-double-up"></i></a>
     </div>
 
     <%= yield %>
