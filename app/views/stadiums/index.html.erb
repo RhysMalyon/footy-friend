@@ -4,7 +4,7 @@
   </div>
   <div class="cards mt-4 mx-4">
     <% @stadiums.each do |stadium| %>
-      <div class="card" style="width: 18rem;">
+      <div class="card stadium-card mt-4" style="width: 18rem;">
         <% if stadium.photo.attached? %>
           <%= image_tag cl_image_path stadium.photo.key class: "h-50 mb-4" %>
           
@@ -13,7 +13,7 @@
           
         <% end %>
         <div class="card-body">
-          <h5 class="card-title"><%= stadium.name %></h5>
+          <h4 class="card-title"><%= stadium.name %></h4>
           <% if stadium.team %>
             <p class="card-text">Home of <%= link_to stadium.team.name, team_path(stadium.team) %></p>
           <% else %>
@@ -21,8 +21,8 @@
           <% end %>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%= stadium.capacity %></li>
-          <li class="list-group-item"><%= stadium.built %></li>
+          <li class="list-group-item"><strong>Capacity:</strong> <%= stadium.capacity %></li>
+          <li class="list-group-item"><strong>Built:</strong> <%= stadium.built %></li>
         </ul>
         <div class="element-delete p-2 text-center">
           <% if stadium.team %>

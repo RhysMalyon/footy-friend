@@ -8,7 +8,7 @@ class StadiumsController < ApplicationController
   def create
     @stadium = Stadium.new(stadium_params)
     if @stadium.save
-      redirect_to stadium_path(@stadium)
+      redirect_to stadiums_path
     else
       render :new
     end

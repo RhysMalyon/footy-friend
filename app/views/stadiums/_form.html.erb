@@ -1,6 +1,6 @@
 <div>
   <h2>Add a stadium:</h2>
-  <%= simple_form_for(@stadium) do |f| %>
+  <%= simple_form_for @stadium, url: stadiums_path(@stadium) do |f| %>
     <%= f.input :name %>
     <%= f.input :capacity %>
     <%= f.input :built %>
