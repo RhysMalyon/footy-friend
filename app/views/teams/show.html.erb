@@ -1,7 +1,14 @@
 <div class="container">
-  <div class="d-flex justify-content-end">
-    <%= link_to ("<i class='fas fa-user-plus'></i> Add new player").html_safe, new_player_path(@players), class: "btn btn-warning mt-4 rounded-pill add-league-btn" %>
+
+  <div class="d-flex justify-content-between align-items-end px-5 position-relative">
+    <% if @team.stadium %>
+      <h3 class="mt-4"><%= @team.stadium.name %></h3>
+    <% else %>
+      <%= link_to ("<i class='fas fa-landmark'></i> Add stadium").html_safe, new_stadium_path(@stadiums), class: "btn btn-warning mt-4 rounded-pill add-league-btn" %>
+    <% end %>
+    <%= link_to ("<i class='fas fa-user-plus'></i> <span class='btn-add-text'>Add new player</span>").html_safe, new_player_path(@players), class: "btn btn-warning mt-4 rounded-pill add-player-btn" %>
   </div>
+
   <div class="cards mt-4 mx-4 d-flex flex-wrap justify-content-center">
     <% @team.players.each do |player| %>
       <div class="card">
@@ -32,4 +39,5 @@
       </div>
     <% end %>
   </div>
+
 </div>

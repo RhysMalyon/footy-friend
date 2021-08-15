@@ -1,3 +1,45 @@
-.add-league-btn {
+.add-league-btn .add-player-btn {
   box-shadow: 4px 4px 6px rgba($color: #000000, $alpha: 0.2);
+}
+
+
+// Custom Media Queries
+
+@media (max-width: 520px) {
+  .add-player-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    z-index: 100;
+    .btn-add-text {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .add-player-btn {
+    top: 50px;
+    right: 30px;
+  }
+}
+
+@media (min-width: 410px) and (max-width:420px) {
+  .add-player-btn {
+    top: 50px;
+    right: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  .add-player-btn {
+    top: 50px;
+    right: 30px;
+  }
 }
