@@ -1,14 +1,12 @@
-
-
 <div class="container">
   <div class="d-flex justify-content-end">
     <%= link_to ("<i class='far fa-calendar'></i> Add new league").html_safe, new_league_path(@leagues), class: "btn btn-warning mt-4 rounded-pill add-league-btn" %>
   </div>
   <% @leagues.each do |league| %>
     <% if league.photo.attached? %>
-      <div class="card-category mt-4 d-flex flex-column" style="background-image: linear-gradient(rgba(191, 122, 48, 1), rgba(0,0,0,0.3)), url('<%= cl_image_path league.photo.key, crop: :fill %>')">
+      <div class="card-category mt-4 d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 100%), url('<%= cl_image_path league.photo.key, crop: :fill %>')">
     <% else %>
-      <div class="card-category mt-4 d-flex flex-column" style="background-image: linear-gradient(rgba(191, 122, 48, 1), rgba(0,0,0,0.7)), url(http://source.unsplash.com/featured/?football)">
+      <div class="card-category mt-4 d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3) -30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 130%), url(<%= image_url('league-background.jpg') %>)">
     <% end %>
       <%= link_to league.name, league_path(league) %>
       <div class="element-delete">

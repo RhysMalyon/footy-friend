@@ -38,6 +38,31 @@
   grid-gap: 16px;
 }
 
+.team-league-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: black;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  padding: 6px;
+  background-image: linear-gradient(to bottom right, rgb(255, 176, 57), rgb(245, 244, 17)) ;
+  background-blend-mode: soft-light;
+  font-weight: 400;
+  margin: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.flip-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

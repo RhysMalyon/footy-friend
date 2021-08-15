@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
 
   def destroy
     @team.destroy
-    redirect_to league_path(@team.league)
+    redirect_back(fallback_location: '/')
   end
 
   private

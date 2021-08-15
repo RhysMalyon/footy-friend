@@ -1,14 +1,10 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: %i[show destroy]
-
-  def index
-    @players = Player.all
-  end
+  before_action :set_player, only: %i[destroy]
 
   def create
     @player = Player.new(player_params)
     if @player.save
-      redirect_to player_path(@player)
+      redirect_to team_path(@player.team)
     else
       render :new
     end
@@ -16,10 +12,6 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
-  end
-
-  def show
-    @team = @player.team
   end
 
   def destroy

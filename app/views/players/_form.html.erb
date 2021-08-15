@@ -1,0 +1,13 @@
+<div>
+  <h2>Add a player:</h2>
+  <%= simple_form_for(@player) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :age, collection: 1..100 %>
+    <%= f.input :nationality %>
+    <%= f.input :position, :collection => Player::POSITION %>
+    <%= f.association :team, input_html: { class: 'select2' } %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-primary mt-2' %>
+  <% end %>
+</div>

@@ -1,2 +1,46 @@
-<h1>Stadiums#index</h1>
-<p>Find me in app/views/stadiums/index.html.erb</p>
+<div class="container">
+  <div class="d-flex justify-content-end mx-4">
+    <%= link_to ("<i class='fas fa-users'></i> Add new stadium").html_safe, new_stadium_path(@stadiums), class: "btn btn-warning mt-4 rounded-pill add-league-btn" %>
+  </div>
+  <div class="cards mt-4 mx-4">
+    <% @stadiums.each do |stadium| %>
+      <div class="card" style="width: 18rem;">
+        <% if stadium.photo.attached? %>
+          <%= image_tag cl_image_path stadium.photo.key class: "h-50 mb-4" %>
+          
+        <% else %>
+          <%= image_tag "stadium-background.jpg" %>
+          
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= stadium.name %></h5>
+          <% if stadium.team %>
+            <p class="card-text">Home of <%= link_to stadium.team.name, team_path(stadium.team) %></p>
+          <% else %>
+            <p class="card-text">Currently unoccupied</p>
+          <% end %>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= stadium.capacity %></li>
+          <li class="list-group-item"><%= stadium.built %></li>
+        </ul>
+        <div class="element-delete p-2 text-center">
+          <% if stadium.team %>
+            <small> Stadium is occupied</small>
+          <% else %>
+            
+              <%= link_to ('<i class="fas fa-trash"></i><small> Remove stadium?</small>').html_safe,
+                          stadium_path(stadium),
+                          method: :delete,
+                          class: 'card-remove-link', 
+                          data: { confirm: "Remove #{stadium.name}?"} %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+

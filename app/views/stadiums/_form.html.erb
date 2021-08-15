@@ -1,0 +1,10 @@
+<div>
+  <h2>Add a stadium:</h2>
+  <%= simple_form_for(@stadium) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :capacity %>
+    <%= f.input :built %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-primary mt-2' %>
+  <% end %>
+</div>
