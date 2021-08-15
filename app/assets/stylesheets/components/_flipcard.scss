@@ -1,5 +1,5 @@
 :root {
-  --primary: #FFCE00;
+  --primary: #F5F411;
   --secondary: #FE4880;
   --dark: #212121;
   --light: #F3F3F3;
@@ -39,7 +39,6 @@
 }
 
 .card__face--front {
-  // background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +65,7 @@
 .card__header {
   position: relative;
   padding: 30px 30px 40px;
-  height: 30%;
+  height: 25%;
 }
 
 .card__header:after {
@@ -77,13 +76,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+  background-color: var(--primary);
   z-index: -1;
   border-radius: 0px 0px 50% 0px;
 }
 
 .card__header h2 {
-  color: #FFF;
+  color: var(--dark);
   font-size: 18px;
   font-weight: 900;
   text-transform: uppercase;
