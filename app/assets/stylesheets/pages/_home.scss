@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
 
 .hero {
-  height: calc(100vh - 180px);
+  height: 50vh;
   background-color: #F5F411;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .site-info {
-  height: 50vh;
+  height: 27.2vh;
   padding: 16px;
   h2 {
     font-weight: 700;
@@ -54,7 +54,7 @@
   top: 80px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .hero {
     height: 60vh;
     background-color: #F5F411;
