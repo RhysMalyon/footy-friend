@@ -24,6 +24,10 @@
 
 .stadium-card {
   box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  img {
+    height: 224px;
+    object-fit: cover;
+  }
 }
 
 .card-category > .element-delete {

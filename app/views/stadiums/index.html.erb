@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-4">
   <div class="d-flex justify-content-end mx-4">
     <%= link_to ("<i class='fas fa-users'></i> Add new stadium").html_safe, new_stadium_path(@stadiums), class: "btn btn-warning mt-4 rounded-pill add-league-btn" %>
   </div>
@@ -28,11 +28,9 @@
           <% if stadium.team %>
             <small> Stadium is occupied</small>
           <% else %>
-            
-              <%= link_to ('<i class="fas fa-trash"></i><small> Remove stadium?</small>').html_safe,
+            <%= link_to ('<i class="fas fa-trash"></i><small> Remove stadium?</small>').html_safe,
                           stadium_path(stadium),
                           method: :delete,
-                          class: 'card-remove-link', 
                           data: { confirm: "Remove #{stadium.name}?"} %>
           <% end %>
         </div>

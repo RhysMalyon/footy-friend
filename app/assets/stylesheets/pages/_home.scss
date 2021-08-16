@@ -2,22 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
 
 .hero {
-  height: 80vh;
+  height: calc(100vh - 180px);
   background-color: #F5F411;
 }
 
-@media (max-width: 400px) {
-  .hero {
-    height: 100vh;
-    background-color: #F5F411;
-  }
-}
-
 .hero-logo {
+  position: relative;
+  top: -32px;
   font-size: 160px;
 }
 
 .hero-text {
+  position: relative;
+  top: -32px;
   padding: 64px;
   width: 40vw;
   color: black;
@@ -28,5 +25,117 @@
   p {
     font-size: 24px;
     font-family: 'Esteban', serif;
+  }
+}
+
+.site-info {
+  height: 50vh;
+  padding: 16px;
+  h2 {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+  }
+  p {
+    margin-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 4px solid #F5F411;
+  }
+}
+
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-left: 50px solid #555;
+	border-bottom: 25px solid transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 80px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    background-color: #F5F411;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-logo {
+    font-size: 120px;
+  }
+
+  .hero-text {
+    position: relative;
+    top: -64px;
+    width: 75%;
+    padding: 64px;
+    color: black;
+    text-align: center;
+    h1 {
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+    }
+    p {
+      font-size: 24px;
+      font-family: 'Esteban', serif;
+    }
+  }
+
+  .site-info {
+    height: 50vh;
+    padding: 16px;
+    h2 {
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+  
+  .second-triangle {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 100vh;
+  }
+  
+  .hero-logo {
+    font-size: 120px;
+  }
+
+  .hero-text {
+    position: relative;
+    top: -24px;
+    padding: 64px;
+    width: auto;
+    color: black;
+    text-align: center;
+    h1 {
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+    }
+    p {
+      font-size: 24px;
+      font-family: 'Esteban', serif;
+    }
+  }
+
+  .triangle-right {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    height: 100vh;
+  }
+
+  .hero-logo {
+    font-size: 100px;
+    position: relative;
+    top: 16px;
   }
 }

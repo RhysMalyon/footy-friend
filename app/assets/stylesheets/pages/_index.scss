@@ -1,2 +1,30 @@
 // Import page-specific CSS files here.
 @import "home";
+
+body, html {
+  position: relative;
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  margin-bottom: 720px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-bottom: 72px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    margin-bottom: 680px;
+  }
+}
+
+@media (max-width: 400px) {
+  .content {
+    margin-bottom: 714px;
+  }
+}

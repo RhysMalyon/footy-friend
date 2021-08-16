@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-4">
   <div class="d-flex justify-content-end">
     <%= link_to ("<i class='far fa-calendar'></i> Add new league").html_safe, new_league_path(@leagues), class: "btn btn-warning mt-4 rounded-pill add-league-btn" %>
   </div>
@@ -14,7 +14,7 @@
                     league_path(league),
                     method: :delete,
                     class: 'card-remove-link', 
-                    data: { confirm: "Remove #{league.name}?"} %>
+                    data: { confirm: "Deleting #{league.name} will remove all teams and players. Continue?"} %>
       </div>
     </div>
   <% end %>

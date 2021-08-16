@@ -1,11 +1,36 @@
-<div class="hero d-flex align-items-center justify-content-center">
-  <h1><i class="fas fa-running hero-logo" style="opacity: 0.9"></i></h1>
-  <h1><i class="fas fa-running hero-logo"></i></h1>
+<div class="content">
+  <div class="hero d-flex align-items-center justify-content-center">
+    <div>
+      <h1><i class="fas fa-running hero-logo" style="opacity: 0.9"></i><i class="fas fa-running hero-logo"></i></h1>
+    </div>
     <div class="hero-text">
       <h1>Footy Friend</h1>
       <p>Freedom to create your dream team and fill it with familiar faces</p>
-      <%= link_to "Get started", leagues_path, class: "cta-btn rounded-pill mt-3" %>
+      <%= link_to "Get started", leagues_path, class: "cta-btn rounded-pill" %>
     </div>
-</div>
-<div class="container">
+  </div>
+  <div class="site-info text-center mt-3">
+    <h2>How it works</h2>
+    <div class="d-flex justify-content-center flex-wrap">
+      <div class="mt-4">
+        <%= image_tag "stadium-background.jpg", style: "height: 160px; width: 160px; object-fit: cover", class: "mx-5" %>
+        <p>1. Create a stadium</p>
+      </div>
+      <div class="triangle-right"></div>
+      <div class="mt-4">
+        <%= image_tag "league-background.jpg", style: "height: 160px; width: 160px; object-fit: cover", class: "mx-5" %>
+        <p>2. Start a league</p>
+      </div>
+      <div class="triangle-right second-triangle"></div>
+      <div class="mt-4">
+        <%= image_tag "team-background.jpg", style: "height: 160px; width: 160px; object-fit: cover", class: "mx-5" %>
+        <p>3. Found a team</p>
+      </div>
+      <div class="triangle-right align-items-center"></div>
+      <div class="mt-4">
+        <%= image_tag "player-background.jpg", style: "height: 160px; width: 160px; object-fit: cover", class: "mx-5" %>
+        <p>4. Fill your ranks</p>
+      </div>
+    </div>
+  </div>
 </div>

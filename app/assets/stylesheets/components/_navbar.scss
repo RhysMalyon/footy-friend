@@ -3,6 +3,15 @@
   background: #F5F411;
   z-index: 1000;
   position: relative;
+  height: 80px;
+}
+
+.navbar-nav {
+  background: #F5F411;
+  width: 100vw;
+  margin-left: -16px;
+  padding-left: 16px;
+  z-index: 1000;
 }
 
 .navbar-lewagon .navbar-collapse {
