@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: rhysmalyon
+  api_key: '772152741446912'
+  api_secret: _BlomwMM-c2DGfPMlSsbVEWUeh0
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: rhysmalyon
+  api_key: '772152741446912'
+  api_secret: _BlomwMM-c2DGfPMlSsbVEWUeh0
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: rhysmalyon
+  api_key: '772152741446912'
+  api_secret: _BlomwMM-c2DGfPMlSsbVEWUeh0
+  enhance_image_tag: true
+  static_file_support: false
