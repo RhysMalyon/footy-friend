@@ -6,7 +6,7 @@
     <% @stadiums.each do |stadium| %>
       <div class="card stadium-card mt-4" style="width: 18rem;">
         <% if stadium.photo.attached? %>
-          <%= image_tag cl_image_path stadium.photo.key class: "h-50 mb-4" %>
+          <%= image_tag cl_image_path stadium.photo.key, class: "h-50 mb-4" %>
           
         <% else %>
           <%= image_tag "stadium-background.jpg" %>
