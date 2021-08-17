@@ -1,8 +1,26 @@
 // Import page-specific CSS files here.
 @import "home";
 
-body, html {
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+div[ng-view] {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
   position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
 
 .content {

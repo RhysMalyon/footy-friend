@@ -13,6 +13,7 @@
   </head>
   <a name="top"></a>
   <body>
+
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <%= link_to "/", class: "navbar-brand" do %>
         <%= image_tag "text-logo-transparent-crop.png" %>
@@ -46,12 +47,13 @@
         </ul>
       </div>
     </div>
+    
     <div class="top-return">
       <a href="#top"><i class="fas fa-angle-double-up"></i></a>
     </div>
-    <div>
-      <%= yield %>
-    </div>
+
+    <%= yield %>
+
     <footer class="mt-4 justify-content-center">
       <div class="footer-links">
         <a href="#"><i class="fab fa-instagram"></i></a>
