@@ -34,15 +34,27 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   .content {
-    margin-bottom: 72px;
+    margin-bottom: 376px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1080px) {
   .content {
-    margin-bottom: 680px;
+    margin-bottom: 376px;
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    margin-bottom: 200px;
+  }
+}
+
+@media (max-width: 543px) {
+  .content {
+    margin-bottom: 714px;
   }
 }
 

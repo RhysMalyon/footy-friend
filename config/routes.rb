@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'pages#home'
-  resources :leagues, only: %i[index create new show destroy]
-  resources :teams, only: %i[index create new show destroy]
-  resources :players, only: %i[create new destroy]
-  resources :stadiums, only: %i[index create new show destroy]
+  resources :leagues
+  resources :players, only: %i[create new destroy edit update]
+  resources :stadiums
+  resources :teams
 end
