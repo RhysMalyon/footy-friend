@@ -32,6 +32,7 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 gem 'font-awesome-sass'
+gem 'pundit'
 gem 'simple_form'
 
 group :development, :test do
