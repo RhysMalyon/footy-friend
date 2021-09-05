@@ -34,6 +34,7 @@ gem 'devise'
 gem 'faker'
 gem 'font-awesome-sass'
 gem 'pundit'
+gem 'rails_admin', '~> 2.0'
 gem 'simple_form'
 
 group :development, :test do
