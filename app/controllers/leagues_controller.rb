@@ -1,8 +1,9 @@
 class LeaguesController < ApplicationController
   before_action :set_league, only: %i[show destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @leagues = League.all
+    @leagues = policy_scope(League)
   end
 
   def create
@@ -23,8 +24,20 @@ class LeaguesController < ApplicationController
   end
 
   def destroy
+    record.user == user
     @league.destroy
     redirect_to leagues_path
+  end
+
+  def edit; end
+
+  def update
+    record.user == user
+    if @league.update(league_params)
+      redirect_to edit_league_path(@league)
+    else
+      render :show
+    end
   end
 
   private
@@ -35,5 +48,6 @@ class LeaguesController < ApplicationController
 
   def set_league
     @league = League.find(params[:id])
+    authorize @league
   end
 end
