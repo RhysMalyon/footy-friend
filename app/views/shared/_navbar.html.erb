@@ -24,12 +24,21 @@
       </li>
       <li class="nav-item dropdown">
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-          </li>
+          <% if user_signed_in? %>
+            <li class="form-inline mr-3">
+              <%= link_to "Profile", user_path(current_user), class: "text-decoration-none navi-link", style: "color: white" %>
+            </li>
+            <li class="form-inline mr-3">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "text-decoration-none navi-link", style: "color: white" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link", style: "color: white" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link", style: "color: white" %>
+            </li>
+          <% end %>
         </div>
       </li>
     </ul>
