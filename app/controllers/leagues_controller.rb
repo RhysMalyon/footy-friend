@@ -10,6 +10,7 @@ class LeaguesController < ApplicationController
 
   def create
     @league = League.new(league_params)
+    @league.user = current_user
     authorize @league
     if @league.save
       redirect_to league_path(@league)
