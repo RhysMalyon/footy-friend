@@ -18,7 +18,7 @@ class LeaguePolicy < ApplicationPolicy
   end
 
   def update?
-    user_is_owner?
+    true
   end
 
   def edit?
@@ -26,7 +26,7 @@ class LeaguePolicy < ApplicationPolicy
   end
 
   def destroy?
-    user_is_owner?
+    true
   end
 
   private
