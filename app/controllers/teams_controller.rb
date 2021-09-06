@@ -10,6 +10,7 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     @team.user = current_user
+    authorize @team
     if @team.save
       redirect_to team_path(@team)
     else
@@ -19,6 +20,7 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    authorize @team
   end
 
   def show

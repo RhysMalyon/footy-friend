@@ -14,6 +14,7 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
+    authorize @player
   end
 
   def destroy
@@ -29,5 +30,6 @@ class PlayersController < ApplicationController
 
   def set_player
     @player = Player.find(params[:id])
+    authorize @player
   end
 end
