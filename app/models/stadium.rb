@@ -1,4 +1,6 @@
 class Stadium < ApplicationRecord
+  
+  belongs_to :user
   has_one :team
   has_one_attached :photo
   validates :name, presence: true

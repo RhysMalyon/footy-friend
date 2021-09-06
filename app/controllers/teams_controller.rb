@@ -1,8 +1,9 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[show destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @teams = Team.all
+    @teams = policy_scope(Team)
   end
 
   def create
@@ -32,10 +33,11 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:name, :founded, :city, :league_id, :stadium_id, :photo)
+    params.require(:team).permit(:name, :founded, :city, :league_id, :stadium_id, :photo, :user_id)
   end
 
   def set_team
     @team = Team.find(params[:id])
+    authorize @team
   end
 end

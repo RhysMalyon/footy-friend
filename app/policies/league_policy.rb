@@ -18,7 +18,7 @@ class LeaguePolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    user_is_owner?
   end
 
   def edit?
@@ -26,12 +26,12 @@ class LeaguePolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    user_is_owner?
   end
 
   private
 
   def user_is_owner?
-    user == record
+    record.user == user
   end
 end

@@ -30,7 +30,7 @@ class StadiumsController < ApplicationController
   private
 
   def stadium_params
-    params.require(:stadium).permit(:name, :capacity, :built, :photo)
+    params.require(:stadium).permit(:name, :capacity, :built, :photo, :user_id)
   end
 
   def set_stadium
