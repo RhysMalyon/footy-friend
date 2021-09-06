@@ -4,12 +4,9 @@ A web app designed for football lovers to be able to create their own leagues, t
 
 ![footy-friend-home](https://user-images.githubusercontent.com/32938384/132212378-7aa377a8-a4be-4101-b1ed-314ebe0026c6.png)
 <br>
-<br>
 App home: https://footy-friend-lw.herokuapp.com/
 <br>
-<br>
 ### Demo account
-<br>
 Use the following login credentials to make your own leagues, teams, players, and stadiums.
 <br>
 <strong>Please note:</strong> Deleting a league will remove all associated teams and players.
