@@ -1,12 +1,16 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[show destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @teams = Team.all
+    @teams = policy_scope(Team)
+    @user = current_user
   end
 
   def create
     @team = Team.new(team_params)
+    @team.user = current_user
+    authorize @team
     if @team.save
       redirect_to team_path(@team)
     else
@@ -16,12 +20,14 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    authorize @team
   end
 
   def show
     @league = League.new
     @stadium = Stadium.new
     @player = Player.new
+    @user = current_user
   end
 
   def destroy
@@ -32,10 +38,11 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:name, :founded, :city, :league_id, :stadium_id, :photo)
+    params.require(:team).permit(:name, :founded, :city, :league_id, :stadium_id, :photo, :user_id)
   end
 
   def set_team
     @team = Team.find(params[:id])
+    authorize @team
   end
 end

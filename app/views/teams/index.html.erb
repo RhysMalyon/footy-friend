@@ -14,11 +14,13 @@
           <%= team.league.name %>
         </div>
         <div class="element-delete">
-          <%= link_to ('<i class="fas fa-trash"></i>').html_safe,
-                      team_path(team),
-                      method: :delete,
-                      class: 'card-remove-link', 
-                      data: { confirm: "Deleting #{team.name} will remove all players. Continue?"} %>
+          <% if team.user == @user %>
+            <%= link_to ('<i class="fas fa-trash"></i>').html_safe,
+                        team_path(team),
+                        method: :delete,
+                        class: 'card-remove-link', 
+                        data: { confirm: "Deleting #{team.name} will remove all players. Continue?"} %>
+          <% end %>
         </div>
       </div>
     <% end %>

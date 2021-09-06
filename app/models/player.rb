@@ -1,6 +1,7 @@
 class Player < ApplicationRecord
   POSITION = %w[GK CB LB RB CDM CM CAM RW LW RM LM CF ST].freeze
 
+  belongs_to :user
   belongs_to :team
   has_one_attached :photo
   validates :first_name, presence: true

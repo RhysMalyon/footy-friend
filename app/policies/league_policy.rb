@@ -32,6 +32,6 @@ class LeaguePolicy < ApplicationPolicy
   private
 
   def user_is_owner?
-    user == record
+    record == user
   end
 end

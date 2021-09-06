@@ -18,15 +18,15 @@ class StadiumPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    user_is_owner?
   end
 
   def edit?
-    true
+    user_is_owner?
   end
 
   def destroy?
-    true
+    user_is_owner?
   end
 
   private

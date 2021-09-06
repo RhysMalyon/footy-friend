@@ -22,13 +22,26 @@ STADIA = ["Rhythm Park",
           "Aureole Stadium",
           "Pride Field"]
 
+puts "Clearing users..."
+User.destroy_all
+
+puts "Creating admin user..."
+user = User.create!(
+  email: "rhys@webdev.com",
+  password: '123123'
+)
+
+user.admin = true
+user.save
+
 puts "Clearing leagues..."
 League.destroy_all
 
 puts "Populating league database..."
 LEAGUES.each do |league|
   League.create!(
-    name: league
+    name: league,
+    user: user
   )
 end
 puts "Leagues populated!"
@@ -41,7 +54,8 @@ STADIA.each do |stadium|
   Stadium.create!(
     name: stadium,
     capacity: rand(10000..60000),
-    built: rand(1870..2010)
+    built: rand(1870..2010),
+    user: user
   )
 end
 puts "Stadia populated!"
@@ -54,7 +68,8 @@ Stadium.find_each do |stadium|
     founded: rand(1880..2010),
     city: Faker::Nation.capital_city,
     league: League.all.sample,
-    stadium: stadium
+    stadium: stadium,
+    user: user
   )
 end
 puts "Teams populated!"
@@ -68,7 +83,8 @@ Team.find_each do |team|
       age: rand(14..45),
       nationality: Faker::Nation.nationality,
       position: POSITION.sample,
-      team: team
+      team: team,
+      user: user
     )
   end
 end
