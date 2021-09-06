@@ -2,7 +2,8 @@ class StadiumsController < ApplicationController
   before_action :set_stadium, only: %i[show destroy]
 
   def index
-    @stadiums = Stadium.all
+    @stadiums = policy_scope(Stadium)
+    @user = current_user
   end
 
   def create

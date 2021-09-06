@@ -21,11 +21,13 @@
             <h2><%= "#{player.first_name} #{player.last_name}" %></h2>
             <span class="flip-icon"><i class="fas fa-sync-alt"></i></span>
             <div class="element-delete">
-              <%= link_to ('<i class="fas fa-trash"></i>').html_safe,
-                          player_path(player),
-                          method: :delete,
-                          class: 'card-remove-link', 
-                          data: { confirm: "Delete #{player.first_name} #{player.last_name}?"} %>
+              <% if player.user == @user %>
+                <%= link_to ('<i class="fas fa-trash"></i>').html_safe,
+                            player_path(player),
+                            method: :delete,
+                            class: 'card-remove-link', 
+                            data: { confirm: "Delete #{player.first_name} #{player.last_name}?"} %>
+              <% end %>
             </div>
           </div>
           <div class="card__face card__face--back">

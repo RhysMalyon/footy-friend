@@ -9,7 +9,7 @@
       <div class="card-category mt-4 d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3) -30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 130%), url(<%= image_url('league-background.jpg') %>)">
     <% end %>
       <%= link_to league.name, league_path(league) %>
-      <% if policy(League).destroy? %>
+      <% if league.user == @user %>
         <div class="element-delete">
           <%= link_to ('<i class="fas fa-trash"></i>').html_safe,
                       league_path(league),

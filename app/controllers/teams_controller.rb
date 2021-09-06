@@ -4,6 +4,7 @@ class TeamsController < ApplicationController
 
   def index
     @teams = policy_scope(Team)
+    @user = current_user
   end
 
   def create
@@ -23,6 +24,7 @@ class TeamsController < ApplicationController
     @league = League.new
     @stadium = Stadium.new
     @player = Player.new
+    @user = current_user
   end
 
   def destroy
