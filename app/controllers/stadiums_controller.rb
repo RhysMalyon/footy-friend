@@ -8,6 +8,8 @@ class StadiumsController < ApplicationController
 
   def create
     @stadium = Stadium.new(stadium_params)
+    authorize @stadium
+    @stadium.user = current_user
     if @stadium.save
       redirect_to stadiums_path
     else
@@ -17,6 +19,7 @@ class StadiumsController < ApplicationController
 
   def new
     @stadium = Stadium.new
+    authorize @stadium
   end
 
   def show
@@ -36,5 +39,6 @@ class StadiumsController < ApplicationController
 
   def set_stadium
     @stadium = Stadium.find(params[:id])
+    authorize @stadium
   end
 end
