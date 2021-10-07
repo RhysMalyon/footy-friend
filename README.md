@@ -1,6 +1,8 @@
 # ⚽ Footy Friend
 
-A web app designed for football lovers to be able to create their own leagues, teams, stadiums, and players. 
+A web app designed for football lovers to be able to create their own leagues, teams, stadiums, and players. This was my first app developed solo from start to finish and gave me the opportunity to get valuable experience across the full spectrum of development. For more information on the tech used in the development process, check the 'Built With' section below.
+
+I wanted to experiment with relational databases a bit more and see where I could push connections and manage references. This had a knock-on effect to the front end that helped me learn a lot about how PostgreSQL plays with Rails and how flexible it can be for creating a logical flow through a web app. In the future I plan to complete the CRUD actions for each model so that users have the ability to edit and delete their own creations.
 
 ![footy-friend-home](https://user-images.githubusercontent.com/32938384/132212378-7aa377a8-a4be-4101-b1ed-314ebe0026c6.png)
 <br>
@@ -35,7 +37,7 @@ Create `.env` file
 ```
 touch .env
 ```
-Inside `.env`, set these variables. For any APIs, see group Slack channel.
+Inside `.env`, set these variables.
 ```
 CLOUDINARY_URL=your_own_cloudinary_url_key
 ```
